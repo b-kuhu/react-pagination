@@ -52,6 +52,7 @@ const Posts = () => {
         const res = await fetch('https://dummyjson.com/posts?skip=10&limit=10')
         const result = await res.json();
         setData(result.posts);
+        setPage(result.totalPages)
     }
     return <>
         <Table columns={columns} dataSource={data} pagination={{pageSize:150}}/>
